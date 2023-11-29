@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\commentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +18,19 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', function () {
-    return view('admin.admin-layout');
+    return view('admin.main');
 });
 
 Route::get('/admin/product/list', function () {
     return view('admin.product.list');
 });
+
+Route::get('/admin/comment/list', [commentController::class, 'get_comment']);
+
+Route::get('/admin/comment/add', [commentController::class, 'add_comment']);
+Route::post('/admin/comment/add', [commentController::class, 'add_comment_']);
+
+Route::get('/admin/comment/edit', [commentController::class, 'edit_comment']);
+Route::post('/admin/comment/edit', [commentController::class, 'edit_comment_']);
+
+Route::get('/admin/comment/delete', [commentController::class, 'delete_comment']);

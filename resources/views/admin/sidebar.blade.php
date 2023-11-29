@@ -17,6 +17,12 @@
             </a>
         </li>
         <li>
+            <a href="/admin/comment/list">
+                <i class='bx bxs-shopping-bag-alt' ></i>
+                <span class="text">Bình luận</span>
+            </a>
+        </li>
+        <li>
             <a href="#">
                 <i class='bx bxs-doughnut-chart' ></i>
                 <span class="text">Analytics</span>
