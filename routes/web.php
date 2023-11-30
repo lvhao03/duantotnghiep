@@ -1,5 +1,5 @@
 <?php
-use App\Http\Controllers\commentController;
+use App\Http\Controllers\reviewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,12 +25,17 @@ Route::get('/admin/product/list', function () {
     return view('admin.product.list');
 });
 
-Route::get('/admin/comment/list', [commentController::class, 'get_comment']);
 
-Route::get('/admin/comment/add', [commentController::class, 'add_comment']);
-Route::post('/admin/comment/add', [commentController::class, 'add_comment_']);
+Route::prefix('admin/review')->group(function(){
 
-Route::get('/admin/comment/edit', [commentController::class, 'edit_comment']);
-Route::post('/admin/comment/edit', [commentController::class, 'edit_comment_']);
+    Route::get('list', [reviewController::class, 'get_review']);
+    
+    Route::get('add', [reviewController::class, 'add_review']);
+    Route::post('add', [reviewController::class, 'add_review_']);
+    
+    Route::get('edit', [reviewController::class, 'edit_review']);
+    Route::post('edit', [reviewController::class, 'edit_review_']);
+    
+    Route::get('delete', [reviewController::class, 'delete_review']);
+});
 
-Route::get('/admin/comment/delete', [commentController::class, 'delete_comment']);

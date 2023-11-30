@@ -17,7 +17,7 @@
             </a>
         </li>
         <li>
-            <a href="/admin/comment/list">
+            <a href="/admin/review/list">
                 <i class='bx bxs-shopping-bag-alt' ></i>
                 <span class="text">Bình luận</span>
             </a>
